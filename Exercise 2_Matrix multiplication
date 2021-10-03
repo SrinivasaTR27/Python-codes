@@ -1,14 +1,42 @@
-# Program to multiply two matrices using list comprehension
+A=[]
+print("Enter value for first matrix")
+for i in range(3):
+	a=[]
+	for j in range(3):
+		j=int(input("enter input for ["+str(i)+"] ["+str(j)+"]"))
+		a.append(j)
+A.append(a)
+B=[]
+print("Enter value for second matrix")
+for i in range(3):
+	b=[]
+	for j in range(3):
+		j=int(input("enter input for ["+str(i)+"] ["+str(j)+"]"))
+		b.append(j)
+B.append(b)
 
-# 3x3 matrix
-X = [[12,7,3],
-    [4 ,5,6],
-    [7 ,8,9]]
+print("value of first matrix")
+for i in range(3):
+	print(A[i][j],end="")
+	print()
 
-# 3x3 matrix
-Y = [[5,8,1],
-    [6,7,3],
-    [4,5,9]]
+print("value of second matrix")
+for i in range(3):
+	print(B[i][j],end="")
+	print()
 
-# result is 3x3
-result = [[sum(a*b for a,b in zip(X_row,Y_col)) for Y_col in zip(*Y)] for X_row in X]
+print("Multiplication of two 3*3 matrix")
+
+result=[]
+for i in range(3):
+	result.append([])
+	for j in range(3):
+		sum=0
+		for k in range(3):
+			sum=sum+(A[i][k]*B[k][j])
+			result[i].apend(sum)
+
+for i in range(3):
+	for j in range(3):
+		print(result[i][j],end="")
+		print()
